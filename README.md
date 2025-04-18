@@ -23,11 +23,11 @@ A fully responsive and visually appealing Movie App built using **React.js**, **
 
 <!-- Add images here -->
 **Home Page**
-![Home Page](Screenshots/screenshot_1.png)
+![Home Page](./screenshots/screenshot_1.PNG)
 **Geners Page**
-![Home Page](Screenshots/screenshot_2.png)
+![Home Page](./Screenshots/screenshot_2.png)
 **Seacrh Page**
-![Seacrh Page](Screenshots/screenshot_3.png)
+![Seacrh Page](./Screenshots/screenshot_3.png)
 
 ## 📦 Setup Instructions
 
