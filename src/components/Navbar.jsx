@@ -6,7 +6,6 @@ function Navbar() {
   return (
 
     <nav className="w-full bg-gray-900 text-white shadow-md px-4 py-3 flex flex-col md:flex-row items-center justify-between fixed top-0 left-0 z-50">
-     
       
         <div className="text-2xl font-bold text-yellow-400">
           <Link to={"/"}>
@@ -24,7 +23,7 @@ function Navbar() {
       </div>
 
       <div>
-        <Link to="/search" className="hover:text-yellow-300">Search Movies <i class='bx bxs-search-alt-2'></i></Link>
+        <Link to="/search" className="hover:text-blue-100 text-3xl"> <i class='bx bxs-search-alt-2'></i></Link>
       </div>
       
     </nav>
