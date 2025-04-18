@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { API_KEY, BASE_URL, img_url } from '../api/tmdb';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const [allMovies, setAllMovies] = useState([]);
   const [page, setPage] = useState(1);
+
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -17,7 +20,7 @@ function Home() {
         }
       );
       setAllMovies(response.data.results);
-      console.log(response.data.results);
+      // console.log(response.data.results);
       
     } catch (error) {
       console.error(error);
@@ -25,7 +28,9 @@ function Home() {
   };
 
   useEffect(() => {
-    fetchData();
+
+    fetchData()
+
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on page change
   }, [page]);
 
@@ -39,15 +44,18 @@ function Home() {
 
   return (
     <div className="p-6 bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen mt-12 flex flex-col items-center">
+      
       <h1 className="text-4xl font-bold text-center mb-10 text-gray-800 shadow-sm">🎬 Popular Movies</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl px-4">
-        {allMovies &&
+        {
+        allMovies &&
           allMovies.map((movie) =>
             movie.poster_path ? (
               <div
                 key={movie.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 cursor-pointer"
+                onClick={() => navigate(`/movie/${movie.id}`)} 
               >
                 <img
                   src={`${img_url}${movie.poster_path}`}
@@ -73,13 +81,17 @@ function Home() {
                     </h3>
 
                 </div>
+                
+
               </div>
             ) : null
-          )}
+          )
+          }
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center mt-10 gap-4">
+      {
+        allMovies && <div className="flex justify-center mt-10 gap-4">
         <button
           onClick={previous}
           disabled={page === 1}
@@ -95,12 +107,11 @@ function Home() {
         >
           Next
         </button>
+
       </div>
+      }
     </div>
   );
 }
 
 export default Home;
-
-
-

@@ -1,26 +1,38 @@
-import { ToastContainer} from 'react-toastify';
+// import { ToastContainer} from 'react-toastify';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react'
 
 import Navbar from "./components/Navbar";
 
-import Home from './pages/Home';
+import Loader from './pages/Loader';
+
+const Home = lazy(() => import('./pages/Home'));
+const MovieDetail = lazy(() => import('./pages/MovieDetail'));
 
 const App = ()=>{
 
   const handleSearch = (query) => {
     console.log("Search for:", query);
-    // Trigger your API search here
   };
 
   return (
     <>
         <Router>
-          <ToastContainer />
+
           <Navbar onSearch={handleSearch} />
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
+
+          <Suspense fallback={<Loader />}>
+
+            <Routes>
+
+              <Route path="/" element={<Home />} />
+              <Route path="/movie/:id" element={<MovieDetail />} />
+
+            </Routes>
+
+          </Suspense>
+
         </Router>
     </>
   )
