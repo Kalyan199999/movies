@@ -15,13 +15,19 @@ A fully responsive and visually appealing Movie App built using **React.js**, **
 - **Frontend:** React.js, Tailwind CSS
 - **API:** The Movie Database (TMDB)
 - **Icons:** Box-icons
+  
+## Live Demo
+(https://movies-seven-ashy.vercel.app/)
 
 ## 📸 Screenshots
 
 <!-- Add images here -->
-<img src="screenshots/screenshot_1.png" alt="Home Page" width="100%" />
-<img src="screenshots/screenshot_2.png" alt="Movie Details" width="100%" />
-<img src="screenshots/screenshot_3.png" alt="Movie Details" width="100%" />
+**Home Page**
+![Home Page](Screenshots/screenshot_1.png)
+**Geners Page**
+![Home Page](Screenshots/screenshot_2.png)
+**Seacrh Page**
+![Seacrh Page](Screenshots/screenshot_3.png)
 
 ## 📦 Setup Instructions
 
