@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route ,useNavigate } from 'react-router-dom';
 import { Suspense, lazy } from 'react'
 
 import Navbar from "./components/Navbar";
@@ -8,25 +8,20 @@ import Loader from './pages/Loader';
 const Home = lazy(() => import('./pages/Home'));
 const MovieDetail = lazy(() => import('./pages/MovieDetail'));
 const PopularMovies = lazy(() => import('./pages/PopularMovies'));
-
 const TrendingMovies = lazy(() => import('./pages/TrendingMovies'));
 const UpcomingMovies = lazy(() => import('./pages/UpcomingMovies'));
-
-
-<Route path="/trending" element={<TrendingMovies />} />
-
+const Genres = lazy(() => import('./pages/Genres'));
+const GenreMovies = lazy(()=>import('./pages/GenreMovies')); 
+const SearchPage = lazy(()=>import('./pages/SearchPage'));
 
 const App = ()=>{
 
-  const handleSearch = (query) => {
-    console.log("Search for:", query);
-  };
 
   return (
     <>
         <Router>
 
-          <Navbar onSearch={handleSearch} />
+          <Navbar  />
 
           <Suspense fallback={<Loader />}>
 
@@ -37,6 +32,10 @@ const App = ()=>{
               <Route path='/popular' element={<PopularMovies />} />
               <Route path='/trending' element={<TrendingMovies />} />
               <Route path='/upcoming' element={<UpcomingMovies />} />
+              <Route path='/genres' element={<Genres />} />
+              <Route path="/genre/:genreId" element={<GenreMovies />} />
+              <Route path="/search" element={<SearchPage />} />
+
             </Routes>
 
           </Suspense>
