@@ -24,7 +24,7 @@ function Navbar({ onSearch }) {
       <div className="flex flex-wrap gap-4 my-3 md:my-0">
 
         <Link to="/popular" className="hover:text-yellow-300">Popular</Link>
-        <Link to="/toprated" className="hover:text-yellow-300">Top Rated</Link>
+        <Link to="/trending" className="hover:text-yellow-300">Trending</Link>
         <Link to="upcoming" className="hover:text-yellow-300">Upcoming</Link>
         <Link to="/genres" className="hover:text-yellow-300">Genres</Link>
 

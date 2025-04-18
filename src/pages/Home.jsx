@@ -45,7 +45,7 @@ function Home() {
   return (
     <div className="p-6 bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen mt-12 flex flex-col items-center">
       
-      <h1 className="text-4xl font-bold text-center mb-10 text-gray-800 shadow-sm">🎬 Popular Movies</h1>
+      <h1 className="text-4xl font-bold text-center mb-10 text-gray-800 shadow-sm">🎬 Explore Movies</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl px-4">
         {
