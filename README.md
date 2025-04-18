@@ -25,7 +25,7 @@ A fully responsive and visually appealing Movie App built using **React.js**, **
 **Home Page**
 ![Home Page](./screenshots/screenshot_1.PNG)
 **Geners Page**
-![Home Page](./screenshots/screenshot_2.PNG)
+![Geners Page](./screenshots/screenshot_2.PNG)
 **Seacrh Page**
 ![Seacrh Page](./screenshots/screenshot_3.PNG)
 
